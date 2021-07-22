@@ -216,7 +216,7 @@ class ImagePickerWidget extends StatelessWidget {
     final picker = ImagePicker();
 
     try {
-      final pickedFile = await picker.getImage(source: source);
+      final pickedFile = await picker.getVideo(source: source);
 
       if (pickedFile != null) {
         final imageFile = value.copyWith(image: File(pickedFile.path));
@@ -252,7 +252,7 @@ class ImagePickerWidget extends StatelessWidget {
                     children: <Widget>[
                       ListTile(
                         leading: Icon(Icons.photo_camera),
-                        title: Text('Take photo'),
+                        title: Text('Take Video'),
                         onTap: () {
                           Navigator.of(context).pop();
                           _onImageButtonPressed(
@@ -298,7 +298,7 @@ class ImagePickerWidget extends StatelessWidget {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text("Delete image"),
+          title: Text("Delete Video"),
           content: Text("This action could not be undone"),
           actions: [
             TextButton(
